@@ -61,7 +61,7 @@ O servidor estará disponível no endereço: http://127.0.0.1:5000
 
 ### Rotas da API
 
-1. Listar Todos os Cursos
+#### 1. Listar Todos os Cursos
 
 Método: GET
 
@@ -85,7 +85,7 @@ Resposta:
     }
 ]
 ```
-2. Listar um Curso Específico
+#### 2. Listar um Curso Específico
 
 Método: GET
 
@@ -94,7 +94,7 @@ URL: http://127.0.0.1:5000/cursos/<ID_DO_CURSO>
 Exemplo de URL: http://127.0.0.1:5000/cursos/1
 
 
-3. Criar um Novo Curso
+#### 3. Criar um Novo Curso
 
 Método: POST
 
@@ -110,7 +110,7 @@ Corpo da Requisição (JSON):
 }
 ```
 
-4. Atualizar um Curso
+#### 4. Atualizar um Curso
 
 Método: PUT
 
@@ -127,14 +127,14 @@ Corpo da Requisição (JSON):
 }
 ```
 
-5. Deletar um Curso
+#### 5. Deletar um Curso
 
 Método: DELETE
 
 URL: http://127.0.0.1:5000/cursos/<ID_DO_CURSO>
 
 
-### Estrutura do Projeto
+## Estrutura do Projeto
 A estrutura de diretórios está organizada como segue:
 
 ```bash
