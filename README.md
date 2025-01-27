@@ -8,7 +8,7 @@ Este é um projeto de uma API RESTful para gerenciamento de cursos. A aplicaçã
 - **Excluir** cursos.
 
 ### Proposta
-O projeto utiliza Flask e Flask-RESTful para criar uma API organizada e escalável. O banco de dados é gerido com SQLite, e o código segue boas práticas de desenvolvimento, incluindo organização modular, tratamento de erros e uma base de dados inicial pré-populada.
+O projeto feito em Python, utiliza Flask e Flask-RESTful para criar uma API organizada e escalável. O banco de dados é gerido com SQLite, e o código segue boas práticas de desenvolvimento, incluindo organização modular, tratamento de erros e uma base de dados inicial pré-populada.
 
 ---
 
@@ -62,10 +62,14 @@ O servidor estará disponível no endereço: http://127.0.0.1:5000
 ### Rotas da API
 
 1. Listar Todos os Cursos
+
 Método: GET
+
 URL: http://127.0.0.1:5000/cursos
+
 Resposta:
-json
+
+```json
 [
     {
         "id": 1,
@@ -80,42 +84,57 @@ json
         "carga_horaria": 150
     }
 ]
-
+```
 2. Listar um Curso Específico
+
 Método: GET
+
 URL: http://127.0.0.1:5000/cursos/<ID_DO_CURSO>
+
 Exemplo de URL: http://127.0.0.1:5000/cursos/1
 
+
 3. Criar um Novo Curso
+
 Método: POST
+
 URL: http://127.0.0.1:5000/cursos
+
 Corpo da Requisição (JSON):
-json
+
+```json
 {
     "titulo": "Curso de Python",
     "descricao": "Aprenda Python do básico ao avançado",
     "carga_horaria": 100
 }
+```
 
 4. Atualizar um Curso
+
 Método: PUT
+
 URL: http://127.0.0.1:5000/cursos/<ID_DO_CURSO>
+
 Corpo da Requisição (JSON):
-json
-Copiar
-Editar
+
+```json
+
 {
     "titulo": "Curso de Python Avançado",
     "descricao": "Curso para desenvolvedores experientes",
     "carga_horaria": 120
 }
-
+```
 
 5. Deletar um Curso
+
 Método: DELETE
+
 URL: http://127.0.0.1:5000/cursos/<ID_DO_CURSO>
 
-###Estrutura do Projeto
+
+### Estrutura do Projeto
 A estrutura de diretórios está organizada como segue:
 
 ```bash
