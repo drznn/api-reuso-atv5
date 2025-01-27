@@ -17,5 +17,14 @@ def create_app():
     with app.app_context():
         db.create_all()  # Garante que o banco de dados e as tabelas serão criados automaticamente
 
+        # Popula o banco com cursos iniciais
+        from .models import Curso
+        if not Curso.query.first():  # Verifica se o banco está vazio
+            cursos_iniciais = [
+                Curso(titulo="Engenharia de Software", descricao="Curso avançado de desenvolvimento", carga_horaria=200),
+                Curso(titulo="Design Digital", descricao="Curso sobre design gráfico e digital", carga_horaria=150),
+            ]
+            db.session.bulk_save_objects(cursos_iniciais)
+            db.session.commit()
 
     return app

@@ -7,6 +7,7 @@ class Curso(db.Model):
     carga_horaria = db.Column(db.Integer, nullable=False)
 
     def to_dict(self):
+        """Converte o objeto Curso para um dicionário."""
         return {
             "id": self.id,
             "titulo": self.titulo,
