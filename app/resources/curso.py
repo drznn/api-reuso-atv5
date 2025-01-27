@@ -6,15 +6,15 @@ class CursoResource(Resource):
     def get(self, curso_id=None):
         if curso_id:
             curso = Curso.query.get(curso_id)
-            return vars(curso) if curso else {"message": "Curso não encontrado"}, 404
-        return [vars(curso) for curso in Curso.query.all()]
+            return curso.to_dict() if curso else {"message": "Curso não encontrado"}, 404
+        return [curso.to_dict() for curso in Curso.query.all()]
 
     def post(self):
         data = request.json
         novo_curso = Curso(**data)
         db.session.add(novo_curso)
         db.session.commit()
-        return vars(novo_curso), 201
+        return novo_curso.to_dict(), 201
 
     def put(self, curso_id):
         curso = Curso.query.get(curso_id)
@@ -24,7 +24,7 @@ class CursoResource(Resource):
         for key, value in data.items():
             setattr(curso, key, value)
         db.session.commit()
-        return vars(curso)
+        return curso.to_dict()
 
     def delete(self, curso_id):
         curso = Curso.query.get(curso_id)
