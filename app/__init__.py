@@ -10,9 +10,12 @@ def create_app():
 
     db.init_app(app)
 
+    # Registrar rotas
+    from .routes import setup_routes
+    setup_routes(app)
+
     with app.app_context():
-        from .routes import setup_routes
-        setup_routes(app)
-        db.create_all()  # Cria o banco de dados
+        db.create_all()  # Garante que o banco de dados e as tabelas serão criados automaticamente
+
 
     return app
